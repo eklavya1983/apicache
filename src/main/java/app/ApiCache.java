@@ -2,17 +2,24 @@ package app;
 
 import com.mashape.unirest.http.HttpResponse;
 
-/**
- * Created by nbayyana on 5/6/17.
- */
 public interface ApiCache {
-    public void init();
-    public HttpResponse<String> get(String endpoint);
+    /**
+     * Initialization function
+     */
+    void init();
 
-    public static final String ROOT_EP = "/";
-    public static final String NETFLIX_EP = "/orgs/Netflix";
-    public static final String MEMBERS_EP = "/orgs/Netflix/members";
-    public static final String REPOS_EP = "/orgs/Netflix/repos";
+    /**
+     * Return cached value for provided endpoint.  If endpoint isn't in the cache
+     * null is returned
+     * @param endpoint
+     * @return Cached value if one exists otherwise null
+     */
+    String get(String endpoint);
+
+    static final String ROOT_EP = "/";
+    static final String NETFLIX_EP = "/orgs/Netflix";
+    static final String MEMBERS_EP = "/orgs/Netflix/members";
+    static final String REPOS_EP = "/orgs/Netflix/repos";
 
 
 }

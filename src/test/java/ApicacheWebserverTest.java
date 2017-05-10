@@ -10,9 +10,8 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by nbayyana on 5/6/17.
+ * Test class for ApicacheWebServer
  */
-
 public class ApicacheWebserverTest {
     private ApicacheWebServer server;
 
