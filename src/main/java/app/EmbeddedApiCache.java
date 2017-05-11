@@ -9,7 +9,7 @@ import com.mashape.unirest.request.GetRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Supplier;
@@ -73,7 +73,7 @@ public class EmbeddedApiCache implements ApiCache {
             REPOS_EP
         };
 
-        Map<String, String> tempCache = new Hashtable<>();
+        Map<String, String> tempCache = new HashMap<>();
         for (int i = 0; i < ENDPOINTS.length; i++) {
             String fromGit = getFromGit(ENDPOINTS[i]);
             if (fromGit == null) {
@@ -168,5 +168,5 @@ public class EmbeddedApiCache implements ApiCache {
 
     private Logger logger = LoggerFactory.getLogger(EmbeddedApiCache.class);
     private ObjectMapper mapper = new ObjectMapper();
-    private AtomicReference<Map<String, String>> cache = new AtomicReference<>(new Hashtable<String, String>());
+    private AtomicReference<Map<String, String>> cache = new AtomicReference<>(new HashMap<String, String>());
 }
