@@ -25,6 +25,10 @@ public class ApicacheWebServer {
                 config.getString("api_token"));
     }
 
+    public ApicacheWebServer(ApiCache c) {
+        cache = c;
+    }
+
     /**
      * Initializes cache, setup routes and starts the server.
      * NOTE: Cache initialization is blocking.
@@ -109,6 +113,13 @@ public class ApicacheWebServer {
      */
     public void stopServer() {
         stop();
+    }
+
+    /**
+     * @return config object
+     */
+    public Config getConfig() {
+        return config;
     }
 
     /**

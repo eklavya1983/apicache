@@ -94,7 +94,7 @@ public class EmbeddedApiCache implements ApiCache {
      * @param endpoint
      * @return body of GET request as string or null on any exception or non-200 status code
      */
-    private String getFromGit(String endpoint) {
+    protected String getFromGit(String endpoint) {
         String gitUri = "https://api.github.com";
         Supplier<GetRequest> getSupplier = ()-> {
             GetRequest getRequest;
